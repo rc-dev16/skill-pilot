@@ -1,0 +1,440 @@
+.upiApp {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+  animation: slideInFromRight 0.4s ease-out;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.statusBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 16px 2px;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  z-index: 10;
+}
+
+.timeDisplay {
+  font-weight: 600;
+}
+
+.statusIcons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.signalBars {
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+}
+
+.signalBars span {
+  width: 3px;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+.signalBars span:nth-child(1) { height: 4px; }
+.signalBars span:nth-child(2) { height: 6px; }
+.signalBars span:nth-child(3) { height: 8px; }
+.signalBars span:nth-child(4) { height: 10px; }
+
+.wifiIcon, .batteryIcon {
+  font-size: 12px;
+}
+
+.appHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 16px;
+  background: transparent;
+}
+
+.appTitle {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.closeIcon, .moreIcon {
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.closeIcon:hover, .moreIcon:hover {
+  transform: scale(1.1);
+}
+
+.closeIcon:active, .moreIcon:active {
+  transform: scale(0.9);
+}
+
+.upiContent {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 24px 24px 0 0;
+  padding: 16px 24px 12px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  animation: slideUpContent 0.5s ease-out 0.2s both;
+  overflow: hidden;
+  max-height: 100%;
+  justify-content: space-between;
+}
+
+@keyframes slideUpContent {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.merchantSection {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.merchantLogo {
+  margin-bottom: 6px;
+}
+
+.logoCircle {
+  width: 45px;
+  height: 45px;
+  background: #ffffff;
+  border: 3px solid #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logoText {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+.merchantInfo {
+  text-align: center;
+}
+
+.merchantName {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2px;
+}
+
+.merchantId {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.amountSection {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 6px 0;
+}
+
+.amountDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.currency {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-right: 2px;
+}
+
+.amount {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.orderInfo {
+  background: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.orderId {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.paymentMethodSection {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 10px;
+  font-weight: 600;
+  color: #9ca3af;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.paymentMethod {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.paymentMethod:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.methodIcon {
+  margin-right: 12px;
+}
+
+.bankLogo {
+  width: 36px;
+  height: 36px;
+  background: #dc2626;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.methodInfo {
+  flex: 1;
+}
+
+.bankName {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2px;
+}
+
+.accountNumber {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.chevronIcon {
+  color: #9ca3af;
+}
+
+.rewardMessage {
+  background-color: #ecfdf5;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  text-align: center;
+  border: 1px dashed #10b981;
+}
+
+.rewardMessage p {
+  margin: 0 0 4px;
+  color: #047857;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.smallText {
+  font-size: 11px;
+  color: #059669;
+}
+
+.securityNotice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f8fafc;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 11px;
+  color: #475569;
+}
+
+.securityIcon {
+  color: #b45309;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.payButton {
+  width: 100%;
+  background: #4f46e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cancelButton {
+  width: 100%;
+  background: #f3f4f6;
+  color: #4b5563;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.payButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.payButton:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+.payButton:hover::before {
+  left: 100%;
+}
+
+.payButton:active,
+.payButton.pressed {
+  transform: translateY(0);
+  background: #3730a3;
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.3);
+}
+
+.cancelButton:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+.cancelButton:active {
+  transform: translateY(0);
+  background: #d1d5db;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 15px;
+  padding-top: 8px;
+  border-top: 1px solid #f3f4f6;
+  width: 100%;
+}
+
+.securePayment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  color: #059669;
+  font-size: 12px;
+}
+
+.shieldIcon {
+  color: #059669;
+}
+
+.poweredBy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.axisLogo {
+  font-weight: 600;
+  color: #dc2626;
+}
+
+@media (max-width: 480px) {
+  .upiContent {
+    padding: 20px 22px 16px;
+  }
+  
+  .merchantName {
+    font-size: 18px;
+  }
+  
+  .amount {
+    font-size: 30px;
+  }
+  
+  .currency {
+    font-size: 20px;
+  }
+  
+  .actionButtons {
+    gap: 5px;
+  }
+  
+  .payButton, .cancelButton {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+}

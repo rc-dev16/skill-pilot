@@ -1,0 +1,309 @@
+.upiSimulation {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topSection {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0.5rem 2rem 0.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+}
+
+.backButton {
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: 2px solid #e0e0e0;
+  color: #666;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.backButton:hover {
+  background: #212121;
+  color: white;
+  border-color: #212121;
+}
+
+.headerContent {
+  flex: 1;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+  margin-top: 0.5rem;
+}
+
+.simulationTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212121;
+  margin-bottom: 0.5rem;
+}
+
+.simulationSubtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+.hindiInstruction {
+  color: #dc2626 !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  margin-top: 0.5rem !important;
+  padding: 0.5rem 0.75rem !important;
+  background: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+  border-radius: 6px !important;
+  display: inline-block;
+}
+
+.simulationContent {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+  flex: 1;
+}
+
+.phoneContainer {
+  flex-shrink: 0;
+  animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.phoneFrame {
+  width: 380px;
+  height: 780px;
+  background: #1a1a1a;
+  border-radius: 35px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.phoneFrame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.phoneScreen {
+  width: 100%;
+  height: calc(100% - 30px);
+  background: #ffffff;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeIndicator {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 4px;
+  background: #666;
+  border-radius: 2px;
+}
+
+.phoneLoading {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #ffffff;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f4f6;
+  border-top: 3px solid #212121;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.phoneLoading p {
+  color: #666;
+  font-size: 14px;
+}
+
+.instructionPanel {
+  flex: 1;
+  max-width: 400px;
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  animation: slideInRight 0.8s ease-out 0.4s both;
+  align-self: flex-start;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.instructionPanel.warning {
+  border-color: #f59e0b;
+  background: #fffbeb;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.1);
+}
+
+.instructionPanel h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #212121;
+  margin-bottom: 1rem;
+}
+
+.instructionPanel p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .simulationContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .instructionPanel {
+    max-width: 340px;
+    order: -1;
+    margin: 0 auto;
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .topSection {
+    padding: 0.5rem 1rem 0.5rem;
+  }
+  
+  .headerRow {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .backButton {
+    position: relative;
+    top: 0;
+    left: 0;
+    align-self: flex-start;
+  }
+  
+  .headerContent {
+    margin-top: 0;
+  }
+  
+  .simulationContent {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+  
+  .phoneFrame {
+    width: 300px;
+    height: 600px;
+    padding: 15px;
+  }
+  
+  .simulationTitle {
+    font-size: 1.8rem;
+  }
+  
+  .instructionPanel {
+    padding: 1.25rem;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .upiSimulation {
+    padding: 0.5rem 0;
+  }
+  
+  .topSection {
+    padding: 0.25rem 1rem 0.25rem;
+  }
+  
+  .phoneFrame {
+    width: 280px;
+    height: 560px;
+  }
+  
+  .simulationTitle {
+    font-size: 1.6rem;
+  }
+  
+  .simulationSubtitle {
+    font-size: 0.9rem;
+  }
+  
+  .instructionPanel {
+    padding: 1rem;
+    max-width: 280px;
+  }
+  
+  .instructionPanel h3 {
+    font-size: 1rem;
+  }
+  
+  .instructionPanel p {
+    font-size: 0.85rem;
+  }
+}
